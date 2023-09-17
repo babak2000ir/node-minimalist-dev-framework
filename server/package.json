@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "build": "npm i && webpack --config ./webpack.config.js --mode=production",
-    "postbuild": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./postbuild.ps1",
     "dev": "npm i && webpack --config ./webpack.config.js --mode=development"
   },
   "author": "Babak Jahedmanesh <babak.jahedmanesh@gmail.com>",

@@ -7,6 +7,9 @@ import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import Router from 'koa-router';
 
+import axios from 'axios';
+import qs from 'qs';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -21,11 +24,16 @@ app.use(async (ctx, next) => {
     await next();
 });
 
+router.get('/', async (ctx) => {
+    ctx.body = 'Now I\'m alive!';
+});
+
 router.get('/api', async (ctx) => {
     ctx.body = "Hello World!"
 });
 
 app.use(router.routes());
 
-app.listen(3000);
-console.log("Server is listening on port 3000");
+const port = process.env.port || 8080;
+app.listen(port);
+console.log(`Server is listening on port ${port}`);
