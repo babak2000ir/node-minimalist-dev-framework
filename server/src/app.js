@@ -1,3 +1,7 @@
+//env import & config
+import dotenv from 'dotenv';
+dotenv.config({ path: '../.env' });
+
 //import node
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -6,9 +10,6 @@ import { fileURLToPath } from 'node:url';
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import Router from 'koa-router';
-
-import axios from 'axios';
-import qs from 'qs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
