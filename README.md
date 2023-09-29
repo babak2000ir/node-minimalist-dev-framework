@@ -3,6 +3,10 @@
 * koa
 * webpack
 
+###### v 1.1.1
+
+Small bugfix in webpack script.
+
 ###### v 1.1.0
 
 Changes to config deployment to azure.

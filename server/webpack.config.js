@@ -6,6 +6,7 @@ import webpack from 'webpack';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const __src = path.resolve(__dirname, 'src');
+const __distDev = path.resolve(__dirname, 'dist');
 const __dist = path.resolve(__dirname, '..', 'dist');
 
 const configBuilder = (env, argv) => {
@@ -14,7 +15,7 @@ const configBuilder = (env, argv) => {
     target: 'node',
     output: {
       filename: 'server.cjs',
-      path: __dist,
+      path: argv.mode === 'production' ? __dist : __distDev,
     },
     resolve: {
       alias: {
